@@ -15,7 +15,6 @@ group :development, :test do
   gem 'guard-spork', :github => 'guard/guard-spork'
   gem 'spork', '0.9.2'
 end
-
 group :development do
   gem 'annotate', '2.5.0'
 end
