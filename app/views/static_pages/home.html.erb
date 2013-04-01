@@ -1,18 +1,27 @@
-<div class="center hero-unit">
- <aside class="span4">
-  <h1>Welcome to Michael Armistead's Sample App</h1>
+<% if signed_in? %>
+  <div class="row">
+    <aside class="span4">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+  </div>  
+<% else %>
+  <div class="center hero-unit">
+    <h1>Welcome to the Sample App</h1>
 
-  <h2>
-    here's a link to go to a
-    <a href="www.codeacademy.com">place to learn ruby</a>
-    online.
-  </h2>
-</aside>
-  <p> here's a test<p/>
+    <h2>
+      This is the home page for the
+      <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
+      sample application.
+    </h2>
 
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
-<p>totally not stealing content<p/>
-  <img src="http://i.imgur.com/jjSRCDR.jpg"/>
-</div>
+    <%= link_to "Sign up now!", signup_path, 
+                                class: "btn btn-large btn-primary" %>
+  </div>
 
-<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+  <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+<% end %> 
